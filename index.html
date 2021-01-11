@@ -13,7 +13,7 @@
     <!-- Bootstrap core CSS -->
    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
    <link rel="stylesheet" href="bootstrap-4.5.3-dist 2/css/bootstrap.css">
-   
+
    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
     
    <script src='spectrum.js'></script>
@@ -48,6 +48,10 @@
     <a class="p-2 text-dark" href="#">Pricing</a>
   </nav>
   <a class="btn btn-outline-primary" href="#">Sign up</a>
+</div>
+
+<div class="text-center">
+  <input id="color-picker" value='#276c00' />
 </div>
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
@@ -142,5 +146,16 @@
     </div>
   </footer>
 </div>
+
+<script>
+  $('#color-picker').spectrum({
+      type: "component",
+      showInput: "true",
+      showInitial: "true",
+      change: function(color) {
+          document.documentElement.style.setProperty('--primary',  $(this).val());
+      }
+  });
+</script>
 </body>
 </html>
