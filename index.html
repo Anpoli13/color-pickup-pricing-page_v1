@@ -153,7 +153,10 @@
       showInput: "true",
       showInitial: "true",
       change: function(color) {
-          document.documentElement.style.setProperty('--primary',  $(this).val());
+          document.documentElement.style.setProperty('--color',  $(this).val());
+
+          document.documentElement.style.setProperty('--primary-color-hs', [Math.round(color.toHsl().h), Math.round(color.toHsl().s * 100) + '%'].join());
+          document.documentElement.style.setProperty('--primary-color-l', Math.round(color.toHsl().l * 100) + '%');
       }
   });
 </script>
